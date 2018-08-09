@@ -40,7 +40,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
     appIcon     string   // Dapp图标 
     action      string   // 赋值为login
     uuID        string   // Dapp server生成的，用于此次登录验证的唯一标识   
-    VerifyUrl   string   // Dapp server上用于登录验证信息的url
+    LoginUrl    string   // Dapp server上用于登录验证信息的url
 }
 ```
 - 钱包对登录相关数据进行签名
@@ -49,7 +49,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 let data = timestamp + account + uuID
 sign = ecc.sign(data, privateKey)
 ```
-- 钱包将签名后的数据POST到Dapp提供的VerifyUrl，请求登录验证
+- 钱包将签名后的数据POST到Dapp提供的LoginUrl，请求登录验证
 ```
  // 请求登录验证的数据格式
 {
@@ -82,7 +82,7 @@ sign = ecc.sign(data, privateKey)
     appIcon     string   // Dapp图标Url，用于在钱包APP中展示
     action      string   // 赋值为login
     uuID        string   // 用于Dapp登录验证唯一标识   
-    VerifyUrl   string   // Dapp server生成的，用于此次登录验证的URL 
+    LoginUrl    string   // Dapp server生成的，用于此次登录验证的URL 
     appKey      string   // 钱包回调拉起Dapp移动端的app标识
 }
 ```
