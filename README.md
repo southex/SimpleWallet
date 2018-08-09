@@ -115,6 +115,7 @@ sign = ecc.sign(data, privateKey)
 }
 ```
 - 钱包使用上述数据生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网
+- Dapp需自行监控EOS主网，检查代币是否到账
 
 
 #### 场景2：Dapp的移动端拉起钱包App，请求支付授权
