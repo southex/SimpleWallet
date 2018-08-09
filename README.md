@@ -1,7 +1,7 @@
-# SimpleConnect 协议文档 V1.0
+# SimpleWallet 协议文档 V1.0
 
 
-SimpleConnect是一个EOS钱包和Dapp的通用对接协议。
+SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 
 目前EOS的钱包应用众多、Dapp也在快速发展中，在实际对接过程中，各方标准不统一，对接耗时耗力。
 
