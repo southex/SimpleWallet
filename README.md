@@ -24,7 +24,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 ### 登录
 
 
-#### 使用钱包扫码二维码登录
+#### 场景1：使用钱包扫码二维码登录
 > 	适合Dapp的网站接入。
 > 
 > 业务流程图如下：
@@ -70,7 +70,7 @@ sign = ecc.sign(data, privateKey)
 }
 
 ```
-#### Dapp的移动端应用拉起钱包App，请求登录授权
+#### 场景2：Dapp的移动端应用拉起钱包App，请求登录授权
 > 	适合Dapp的移动端(iOS或安卓端）接入。业务流程图如下：
 
 ![image](http://on-img.com/chart_image/5b6591fbe4b0edb750f9a364.png)
@@ -89,7 +89,7 @@ sign = ecc.sign(data, privateKey)
 - 之后的流程和上面的扫码登录过程相同
 
 ### 支付
-#### 钱包扫描二维码进行支付
+#### 场景1：钱包扫描二维码进行支付
 > 业务流程图如下:
 
 ![image](http://on-img.com/chart_image/5b6594bae4b053a09c24fa9a.png)
@@ -117,7 +117,7 @@ sign = ecc.sign(data, privateKey)
 - 钱包使用上述数据生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网
 
 
-#### Dapp的移动端拉起钱包App，请求支付授权
+#### 场景2：Dapp的移动端拉起钱包App，请求支付授权
 > 业务流程图如下：
 
 ![image](http://on-img.com/chart_image/5b659391e4b0f8477da3138b.png)
