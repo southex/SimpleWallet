@@ -58,7 +58,7 @@ sign = ecc.sign(data, privateKey)
     sign       string     // eos签名
     uuID       string     // Dapp server生成的，用于此次登录验证的唯一标识     
     account    string     // eos账户名
-    ref       string      // 来源,如钱包名
+    ref        string      // 来源,如钱包名
 }
 ```
 - Dapp server收到登录验证数据，验证通过后，返回success == true或false
