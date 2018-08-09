@@ -40,7 +40,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
     appIcon     string   // Dapp图标 
     action      string   // 赋值为login
     uuID        string   // Dapp server生成的，用于此次登录验证的唯一标识   
-    postUrl     string   // Dapp server上用于登录验证信息的url
+    VerifyUrl   string   // Dapp server上用于登录验证信息的url
 }
 ```
 - 钱包对登录相关数据进行签名
@@ -49,16 +49,16 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 let data = timestamp + account + uuID
 sign = ecc.sign(data, privateKey)
 ```
-- 钱包将签名后的数据POST到Dapp提供的postUrl请求登录验证
+- 钱包将签名后的数据POST到Dapp提供的VerifyUrl，请求登录验证
 ```
  // 请求登录验证的数据格式
 {
     version    string     // SimpleWallet的版本信息，如1.0
-    timestamp  number     // 时间戳
+    timestamp  number     // 当前UNIX时间戳
     sign       string     // eos签名
     uuID       string     // Dapp server生成的，用于此次登录验证的唯一标识     
     account    string     // eos账户名
-    from       string     // 来源,如钱包名
+    ref       string      // 来源,如钱包名
 }
 ```
 - Dapp server收到登录验证数据，验证通过后，返回success == true或false
@@ -78,11 +78,11 @@ sign = ecc.sign(data, privateKey)
 ```
 {
     version     string   // SimpleWallet的版本信息，如1.0
-    appName     string   // Dapp名字
-    appIcon     string   // Dapp图标Url
+    appName     string   // Dapp名字，用于在钱包APP中展示
+    appIcon     string   // Dapp图标Url，用于在钱包APP中展示
     action      string   // 赋值为login
     uuID        string   // 用于Dapp登录验证唯一标识   
-    postUrl     string   // Dapp server生成的，用于此次登录验证的唯一标识   
+    VerifyUrl   string   // Dapp server生成的，用于此次登录验证的URL 
     appKey      string   // 钱包回调拉起Dapp移动端的app标识
 }
 ```
@@ -99,13 +99,12 @@ sign = ecc.sign(data, privateKey)
 {
 	version     string   // SimpleWallet的版本信息，如1.0
 	action      string   // 支付时，赋值为transfer
-	subaction   string   // ？？？交易下单为putorder, 此时info中的数据格式如下
 	from        string   // 付款人的EOS账号，可选
 	to          string   // 收款人的EOS账号，必须
 	amount      number     // 转账数量，必须
 	symbol      string     // 转账的token名称，必须
 	memo        string       // 转账memo，可选
-	info {            // 此笔交易的业务附加信息，如下为一个交易所订单的示例
+	info {            // 此笔转账交易的业务附加信息，由Dapp生成，如下为一个交易所订单的示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
 		limitType number    // 0 限价 1 市价
@@ -127,20 +126,19 @@ sign = ecc.sign(data, privateKey)
 {
 	version     string   // SimpleWallet的版本信息，如1.0
 	action      string   // 支付时，赋值为transfer
-	subaction   string   // ？？？交易下单为putorder, 此时info中的数据格式如下
 	from        string   // 付款人的EOS账号，可选
 	to          string   // 收款人的EOS账号，必须
 	amount      number     // 转账数量，必须
 	symbol      string     // 转账的token名称，必须
 	memo        string       // 转账memo，可选
-	info {            // 此笔交易的业务附加信息，如下为一个交易所订单的示例
+	info {            // 此笔转账交易的业务附加信息，如下为一个交易所订单的示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
 		limitType number    // 0 限价 1 市价
 		price string	    // 价格 1.0001 EOS
 		stockAmount string  // 10.0000 BTC
 	}
-    appKey      string   // 钱包回调拉起Dapp移动端的app标识
+    	appKey      string   // 钱包回调拉起Dapp移动端的app标识
 }
 ```
 - 钱包使用上述数据生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网
