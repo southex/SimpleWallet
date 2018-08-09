@@ -1,4 +1,4 @@
-# SimpleWallet 协议文档
+# SimpleWallet 协议文档 V1.0
 
 
 SimpleWallet是一种EOS钱包和Dapp的通用对接协议。
@@ -58,7 +58,7 @@ sign = ecc.sign(data, privateKey)
     sign       string     // eos签名
     uuID       string     // Dapp server生成的，用于此次登录验证的唯一标识     
     account    string     // eos账户名
-    from       string     // 来源
+    from       string     // 来源,如钱包名
 }
 ```
 - Dapp server验证通过后，返回success == true
