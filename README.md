@@ -49,7 +49,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 let data = timestamp + account + uuID
 sign = ecc.sign(data, privateKey)
 ```
-- 钱包将签名后的数据post到Dapp 提供的 postUrl
+- 钱包将签名后的数据POST到Dapp提供的postUrl请求登录验证
 ```
  // 请求登录验证的数据格式
 {
@@ -61,7 +61,7 @@ sign = ecc.sign(data, privateKey)
     from       string     // 来源,如钱包名
 }
 ```
-- Dapp server验证通过后，返回success == true
+- Dapp server收到登录验证数据，验证通过后，返回success == true或false
   
 ```
 // 请求登录返回数据格式
