@@ -35,7 +35,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 ```
 // 扫码登录的数据格式
 {
-    version     string     // SimpleWallet的版本信息，如1.0
+    version     string   // SimpleWallet的版本信息，如1.0
     appName     string   // Dapp名字
     appIcon     string   // Dapp图标 
     action      string   // 赋值为login
