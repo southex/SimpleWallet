@@ -1,4 +1,6 @@
-# Simple 协议文档 V1.0
+# Simple 协议文档 V1.01
+
+Last Update: 2018.8.13
 
 SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 
