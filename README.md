@@ -102,6 +102,7 @@ sign = ecc.sign(data, privateKey)
 	from        string   // 付款人的EOS账号，可选
 	to          string   // 收款人的EOS账号，必须
 	amount      number     // 转账数量，必须
+	contract    string     // 转账的token所属的contract账号名
 	symbol      string     // 转账的token名称，必须
 	memo        string       // 转账memo，可选
 	info {            // 此笔转账交易的业务附加信息，由Dapp生成，如下为一个交易所订单的示例
@@ -115,6 +116,7 @@ sign = ecc.sign(data, privateKey)
 ```
 - 钱包使用上述数据生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网
 - Dapp需自行监控EOS主网，检查代币是否到账
+- 对于大的流行币种如IQ，如果二维码中给出的contract名和IQ官方的合约名不一致，要提醒用户，做二次确认
 
 
 #### 场景2：Dapp的移动端拉起钱包App，请求支付授权
@@ -129,6 +131,7 @@ sign = ecc.sign(data, privateKey)
 	from        string   // 付款人的EOS账号，可选
 	to          string   // 收款人的EOS账号，必须
 	amount      number     // 转账数量，必须
+	contract    string     // 转账的token所属的contract账号名	
 	symbol      string     // 转账的token名称，必须
 	memo        string       // 转账memo，可选
 	info {            // 此笔转账交易的业务附加信息，如下为一个交易所订单的示例
