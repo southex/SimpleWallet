@@ -121,7 +121,7 @@ sign = ecc.sign(data, privateKey)
 			     // 钱包转账时的memo信息，格式为 dappData=xxxxxxx&ref=walletname
 			     // dapp收到转账后,用dappData来关联自己的业务逻辑，用ref标示来区分来源
 	expire	    number   // 二维码过期时间，unix时间戳
-	info {               // 此笔转账交易的业务附加信息，由Dapp生成，用于在钱包展示。如下为一个交易所订单的示例
+	info {               // 此笔转账交易的业务附加信息，可选项，仅用于钱包展示，方便用户识别，如下为示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
 		limitType number    // 0 限价 1 市价
@@ -156,7 +156,7 @@ sign = ecc.sign(data, privateKey)
 	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去
 			     // 钱包转账时的memo信息，格式为 dappData=xxxxxxx&ref=walletname
 			     // dapp收到转账后,用dappData来关联自己的业务逻辑，用ref标示来区分来源
-	info {               // 此笔转账交易的业务附加信息，用于钱包展示，如下为一个交易所订单的示例
+	info {               // 此笔转账交易的业务附加信息，可选项，仅用于钱包展示，方便用户识别，如下为示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
 		limitType number    // 0 限价 1 市价
