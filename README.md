@@ -70,7 +70,7 @@ sign = ecc.sign(data, privateKey)
     ref        string     // 来源,如钱包名
 }
 ```
-- Dapp server收到登录验证数据，验证通过后，返回success == true或false
+- Dapp server收到数据数，验证sign签名数据，返回success == true或false
   
 ```
 // 请求登录返回数据格式
