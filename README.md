@@ -44,8 +44,8 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 {
     protocol	string   // 协议名，钱包用来区分不同协议，本协议为 SimpleWallet
     version     string   // 协议版本信息，如1.0
-    dappName     string   // Dapp名字
-    dappIcon     string   // Dapp图标 
+    dappName    string   // Dapp名字
+    dappIcon    string   // Dapp图标 
     action      string   // 赋值为login
     uuID        string   // Dapp server生成的，用于此次登录验证的唯一标识   
     loginUrl    string   // Dapp server上用于登录验证信息的url
