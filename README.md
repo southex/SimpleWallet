@@ -1,6 +1,6 @@
 # SimpleWallet 协议文档 （意见征集稿）
 
-版本：1.0.2
+版本：1.0.3
 
 最后更新：2018.8.13
 
@@ -48,6 +48,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
     uuID        string   // Dapp server生成的，用于此次登录验证的唯一标识   
     loginUrl    string   // Dapp server上用于登录验证信息的url
     expire	number   // 二维码过期时间，unix时间戳
+    loginMemo	string   // 登录备注信息，可选
 }
 ```
 - 钱包对登录相关数据进行签名
@@ -94,6 +95,7 @@ sign = ecc.sign(data, privateKey)
     uuID        string   // 用于Dapp登录验证唯一标识   
     loginUrl    string   // Dapp server生成的，用于此次登录验证的URL 
     appKey      string   // 钱包回调拉起Dapp移动端的app标识
+    loginMemo	string   // 登录备注信息，可选
 }
 ```
 - 之后的流程和上面的扫码登录过程相同
@@ -117,6 +119,7 @@ sign = ecc.sign(data, privateKey)
 	amount      number   // 转账数量，必须
 	contract    string   // 转账的token所属的contract账号名，必须
 	symbol      string   // 转账的token名称，必须
+	precision   number   // 转账的token的精度，小数点后面的位数，必须
 	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去
 			     // 钱包转账时的memo信息，格式为 dappData=xxxxxxx&ref=walletname
 			     // dapp收到转账后,用dappData来关联自己的业务逻辑，用ref标示来区分来源
@@ -153,6 +156,7 @@ sign = ecc.sign(data, privateKey)
 	amount      number   // 转账数量，必须
 	contract    string   // 转账的token所属的contract账号名	
 	symbol      string   // 转账的token名称，必须
+	precision   number   // 转账的token的精度，小数点后面的位数，必须	
 	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去
 			     // 钱包转账时的memo信息，格式为 dappData=xxxxxxx&ref=walletname
 			     // dapp收到转账后,用dappData来关联自己的业务逻辑，用ref标示来区分来源
@@ -175,8 +179,8 @@ sign = ecc.sign(data, privateKey)
 ```
 // 错误返回 
 {
-    code number
-    message string
+    code number     //错误符，等于0是成功，大于0说明请求失败，dapp返回具体的错误码
+    message string  //返回的提示信息
 }
 ```
 
