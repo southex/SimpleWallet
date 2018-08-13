@@ -26,12 +26,15 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 
 ## 协议内容
 
-### 1. 钱包APP在系统注册SimpleWallet协议
+### 1. 钱包APP在系统注册拦截协议
 
-钱包APP应在系统内注册拦截协议（URL Scheme、appLink），以便Dapp的APP拉起钱包选择面板。
+钱包APP应在操作系统内注册拦截协议（URL Scheme、appLink），以便Dapp的APP拉起钱包应用。
 
-（todo）
+拦截协议为：simplewallet://eos.io
 
+Dapp的移动端应用可以调用此协议，传递参数给钱包APP，传递参数的格式为：
+
+simplewallet://eos.io?param={json数据}
 
 ### 2. 登录
  
@@ -184,7 +187,7 @@ sign = ecc.sign(data, privateKey)
 	}			     
 }
 ```
-- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网
+- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callbackUrl，则回调拉起dapp的应用
 - Dapp需自行监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
 
