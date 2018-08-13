@@ -52,7 +52,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 - 钱包对登录相关数据进行签名
 ```
 // 生成sign算法
-let data = timestamp + account + uuID
+let data = timestamp + account + uuID + ref
 sign = ecc.sign(data, privateKey)
 ```
 - 钱包将签名后的数据POST到Dapp提供的loginUrl，请求登录验证
