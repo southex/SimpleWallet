@@ -117,9 +117,9 @@ sign = ecc.sign(data, privateKey)
 	amount      number   // 转账数量，必须
 	contract    string   // 转账的token所属的contract账号名，必须
 	symbol      string   // 转账的token名称，必须
-	memo        string   // 由Dapp生成的memo建议信息,格式为dappData=xxxxxxx
-			     // 钱包在转账时，将dappData原封不动放在memo中，发给EOS主网
-	                     // 钱包可在memo中附加'&ref=mywallet'来标示自己，dapp收到转账后用ref标示来区分来源
+	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去
+			     // 钱包转账时的memo信息，格式为 dappData=xxxxxxx&ref=walletname
+			     // dapp收到转账后,用dappData来关联自己的业务逻辑，用ref标示来区分来源
 	expire	    number   // 二维码过期时间，unix时间戳
 	info {               // 此笔转账交易的业务附加信息，由Dapp生成，用于在钱包展示。如下为一个交易所订单的示例
 		orderID number      // 订单
@@ -153,9 +153,9 @@ sign = ecc.sign(data, privateKey)
 	amount      number   // 转账数量，必须
 	contract    string   // 转账的token所属的contract账号名	
 	symbol      string   // 转账的token名称，必须
-	memo        string   // 由Dapp生成的memo建议信息,格式为dappData=xxxxxxx
-			     // 钱包在转账时，将dappData原封不动放在memo中，发给EOS主网
-	                     // 钱包可在memo中附加'&ref=mywallet'来标示自己，dapp收到转账后用ref标示来区分来源
+	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去
+			     // 钱包转账时的memo信息，格式为 dappData=xxxxxxx&ref=walletname
+			     // dapp收到转账后,用dappData来关联自己的业务逻辑，用ref标示来区分来源
 	info {               // 此笔转账交易的业务附加信息，用于钱包展示，如下为一个交易所订单的示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
