@@ -103,9 +103,9 @@ sign = ecc.sign(data, privateKey)
     loginUrl    string   // Dapp server生成的，用于此次登录验证的URL 
     appKey      string   // 钱包回调拉起Dapp移动端的app标识
     loginMemo	string   // 登录备注信息，可选
-    callback    string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调参数
-    		         // 比如安卓端为 appABC://abc.com?action=login&result=1, 
-			 // action的值为login/transfer，result的值为：0为取消，1为成功,  2为失败
+    callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com，可选
+    		         // 钱包回调时在此URL后加上操作结果，建议格式：appABC://abc.com?action=login&result=1, 
+			 // action的值为login/transfer，result的值为：0为用户取消，1为成功,  2为失败
 }
 ```
 - 之后的流程和上面的扫码登录过程相同
@@ -172,9 +172,9 @@ sign = ecc.sign(data, privateKey)
 	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去
 			     // 钱包转账时的memo信息，格式为 dappData=xxxxxxx&ref=walletname
 			     // dapp收到转账后,用dappData来关联自己的业务逻辑，用ref标示来区分来源
-    	callback    string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调参数
-    		             // 比如安卓端为 dappABC://abc.com?action=login&result=1, 
-			     // action的值为login/transfer，result的值为：0为取消，1为成功,  2为失败
+    	callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com，可选
+    		             // 钱包回调时在此URL后加上操作结果，建议格式：appABC://abc.com?action=login&result=1, 
+			     // action的值为login/transfer，result的值为：0为用户取消，1为成功,  2为失败
 	info {               // 此笔转账交易的业务附加信息，可选项，仅用于钱包展示，方便用户识别，如下为示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
