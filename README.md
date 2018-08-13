@@ -138,11 +138,9 @@ sign = ecc.sign(data, privateKey)
 			     // 钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
 	expire	    number   // 二维码过期时间，unix时间戳
 	info {               // 此笔转账交易的业务附加信息，可选项，字段可自己定义，如下为示例
-		orderID number      // 订单
-		side number         // 0 卖单 1 买单
-		limitType number    // 0 限价 1 市价
-		price string	    // 价格 1.0001 EOS
-		stockAmount string  // 10.0000 BTC
+		orderID number     
+		price string	   
+		stockAmount string
 	}	
 	
 }
@@ -176,12 +174,10 @@ sign = ecc.sign(data, privateKey)
     		             // 钱包回调时在此URL后加上操作结果，建议格式：appABC://abc.com?action=login&result=1, 
 			     // action的值为login/transfer，result的值为：0为用户取消，1为成功,  2为失败
 	info {               // 此笔转账交易的业务附加信息，可选项，字段可自己定义，如下为示例
-		orderID number      // 订单
-		side number         // 0 卖单 1 买单
-		limitType number    // 0 限价 1 市价
-		price string	    // 价格 1.0001 EOS
-		stockAmount string  // 10.0000 BTC
-	}			     
+		orderID number     
+		price string	   
+		stockAmount string
+	}	     
 }
 ```
 - 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callbackUrl，则回调拉起dapp的应用
