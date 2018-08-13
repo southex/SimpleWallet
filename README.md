@@ -32,7 +32,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 
 拦截协议为：simplewallet://eos.io
 
-Dapp的移动端应用可以调用此协议，传递参数给钱包APP，传递参数的格式为：
+Dapp的移动端应用可以调用此协议，传递数据给钱包APP，传递数据的请求格式为：
 
 simplewallet://eos.io?param={json数据}
 
@@ -64,7 +64,7 @@ simplewallet://eos.io?param={json数据}
 - 钱包对登录相关数据进行签名
 ```
 // 生成sign算法
-let data = timestamp + account + uuID + ref
+let data = timestamp + account + uuID + ref     //ref为钱包名，标示来源
 sign = ecc.sign(data, privateKey)
 ```
 - 钱包将签名后的数据POST到Dapp提供的loginUrl，请求登录验证
