@@ -104,7 +104,6 @@ sign = ecc.sign(data, privateKey)
     action      string   // 赋值为login
     uuID        string   // 用于Dapp登录验证唯一标识   
     loginUrl    string   // Dapp server生成的，用于此次登录验证的URL 
-    appKey      string   // 钱包回调拉起Dapp移动端的app标识
     loginMemo	string   // 登录备注信息，可选
     callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com，可选
     		         // 钱包回调时在此URL后加上操作结果，建议格式：appABC://abc.com?action=login&result=1, 
