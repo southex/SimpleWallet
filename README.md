@@ -1,6 +1,6 @@
 # SimpleWallet 协议文档
 
-版本：1.0.1
+版本：1.0.2
 
 最后更新：2018.8.13
 
@@ -84,6 +84,7 @@ sign = ecc.sign(data, privateKey)
 ![image](http://on-img.com/chart_image/5b6591fbe4b0edb750f9a364.png)
 - Dapp的移动端拉起钱包APP要求登录授权，提供给钱包App的数据格式为json,包含以下信息：
 ```
+// 传递给钱包APP的数据包结构
 {
     protocol	string   // 协议名，钱包用来区分不同协议，本协议为 SimpleWallet
     version     string   // 协议版本信息，如1.0
@@ -116,8 +117,9 @@ sign = ecc.sign(data, privateKey)
 	amount      number   // 转账数量，必须
 	contract    string   // 转账的token所属的contract账号名，必须
 	symbol      string   // 转账的token名称，必须
-	memo        string   // 转账memo，由Dapp生成,建议格式为dappData=xxxxxxx。钱包在转账时，将dappData原封不动放在memo中，发给Dapp；钱包可在memo中附加'&ref=mywallet'，来标示自己
-	expire	number   // 二维码过期时间，unix时间戳
+	memo        string   // 转账memo，由Dapp生成,建议格式为dappData=xxxxxxx。钱包在转账时，将dappData原封不动放在memo中，发给Dapp；
+	                     // 钱包可在memo中附加'&ref=mywallet'，来标示自己
+	expire	    number   // 二维码过期时间，unix时间戳
 	info {               // 此笔转账交易的业务附加信息，由Dapp生成，用于在钱包展示。如下为一个交易所订单的示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
@@ -150,7 +152,8 @@ sign = ecc.sign(data, privateKey)
 	amount      number   // 转账数量，必须
 	contract    string   // 转账的token所属的contract账号名	
 	symbol      string   // 转账的token名称，必须
-	memo        string   // 转账memo，可选	
+	memo        string   // 转账memo，由Dapp生成,建议格式为dappData=xxxxxxx。钱包在转账时，将dappData原封不动放在memo中，发给Dapp；
+	                     // 钱包可在memo中附加'&ref=mywallet'，来标示自己	
 	info {               // 此笔转账交易的业务附加信息，如下为一个交易所订单的示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
