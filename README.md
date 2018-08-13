@@ -47,6 +47,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
     action      string   // 赋值为login
     uuID        string   // Dapp server生成的，用于此次登录验证的唯一标识   
     loginUrl    string   // Dapp server上用于登录验证信息的url
+    expire	number   // 二维码过期时间，unix时间戳
 }
 ```
 - 钱包对登录相关数据进行签名
@@ -115,14 +116,16 @@ sign = ecc.sign(data, privateKey)
 	amount      number   // 转账数量，必须
 	contract    string   // 转账的token所属的contract账号名，必须
 	symbol      string   // 转账的token名称，必须
-	memo        string   // 转账memo，可选
-	info {            // 此笔转账交易的业务附加信息，由Dapp生成，如下为一个交易所订单的示例
+	memo        string   // 转账memo，由Dapp生成,建议格式为dappData=xxxxxxx。钱包在转账时，将dappData原封不动放在memo中，发给Dapp；钱包可在memo中附加'&ref=mywallet'，来标示自己
+	expire	number   // 二维码过期时间，unix时间戳
+	info {               // 此笔转账交易的业务附加信息，由Dapp生成，用于在钱包展示。如下为一个交易所订单的示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
 		limitType number    // 0 限价 1 市价
 		price string	    // 价格 1.0001 EOS
 		stockAmount string  // 10.0000 BTC
 	}
+	
 }
 ```
 - 钱包使用上述数据生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网
