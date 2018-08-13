@@ -44,12 +44,11 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 {
     protocol	string   // 协议名，钱包用来区分不同协议，本协议为 SimpleWallet
     version     string   // 协议版本信息，如1.0
-    appName     string   // Dapp名字
-    appIcon     string   // Dapp图标 
+    dappName     string   // Dapp名字
+    dappIcon     string   // Dapp图标 
     action      string   // 赋值为login
     uuID        string   // Dapp server生成的，用于此次登录验证的唯一标识   
     loginUrl    string   // Dapp server上用于登录验证信息的url
-    ref         string   // 来源,如钱包名    
 }
 ```
 - 钱包对登录相关数据进行签名
@@ -84,18 +83,17 @@ sign = ecc.sign(data, privateKey)
 > 	适合Dapp的移动端(iOS或安卓端）接入。业务流程图如下：
 
 ![image](http://on-img.com/chart_image/5b6591fbe4b0edb750f9a364.png)
-- Dapp的移动端拉起钱包要求登录授权，提供给钱包App的数据格式为json,包含以下信息：
+- Dapp的移动端拉起钱包APP要求登录授权，提供给钱包App的数据格式为json,包含以下信息：
 ```
 {
     protocol	string   // 协议名，钱包用来区分不同协议，本协议为 SimpleWallet
     version     string   // 协议版本信息，如1.0
-    appName     string   // Dapp名字，用于在钱包APP中展示
-    appIcon     string   // Dapp图标Url，用于在钱包APP中展示
+    dappName    string   // Dapp名字，用于在钱包APP中展示
+    dappIcon    string   // Dapp图标Url，用于在钱包APP中展示
     action      string   // 赋值为login
     uuID        string   // 用于Dapp登录验证唯一标识   
     loginUrl    string   // Dapp server生成的，用于此次登录验证的URL 
     appKey      string   // 钱包回调拉起Dapp移动端的app标识
-    ref         string   // 来源,如钱包名    
 }
 ```
 - 之后的流程和上面的扫码登录过程相同
@@ -107,18 +105,19 @@ sign = ecc.sign(data, privateKey)
 ![image](http://on-img.com/chart_image/5b6594bae4b053a09c24fa9a.png)
 
 ```
-// 支付通用的数据格式
+// 扫描的支付二维码数据格式
 {
 	protocol    string   // 协议名，钱包用来区分不同协议，本协议为 SimpleWallet
     	version     string   // 协议版本信息，如1.0
-	action      string   // 支付时，赋值为transfer
+	dappName    string   // Dapp名字，用于在钱包APP中展示，可选
+    	dappIcon    string   // Dapp图标Url，用于在钱包APP中展示，可选
+	action      string   // 支付时，赋值为transfer，必须
 	from        string   // 付款人的EOS账号，可选
 	to          string   // 收款人的EOS账号，必须
 	amount      number   // 转账数量，必须
-	contract    string   // 转账的token所属的contract账号名
+	contract    string   // 转账的token所属的contract账号名，必须
 	symbol      string   // 转账的token名称，必须
 	memo        string   // 转账memo，可选
-	ref         string   // 来源,如钱包名
 	info {            // 此笔转账交易的业务附加信息，由Dapp生成，如下为一个交易所订单的示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
@@ -143,13 +142,14 @@ sign = ecc.sign(data, privateKey)
 	protocol    string   // 协议名，钱包用来区分不同协议，本协议为 SimpleWallet
 	version     string   // 协议版本信息，如1.0
 	action      string   // 支付时，赋值为transfer
+	dappName    string   // Dapp名字，用于在钱包APP中展示，可选
+    	dappIcon    string   // Dapp图标Url，用于在钱包APP中展示，可选	
 	from        string   // 付款人的EOS账号，可选
 	to          string   // 收款人的EOS账号，必须
 	amount      number   // 转账数量，必须
 	contract    string   // 转账的token所属的contract账号名	
 	symbol      string   // 转账的token名称，必须
-	memo        string   // 转账memo，可选
-	ref         string   // 来源,如钱包名
+	memo        string   // 转账memo，可选	
 	info {               // 此笔转账交易的业务附加信息，如下为一个交易所订单的示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
