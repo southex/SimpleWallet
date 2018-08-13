@@ -1,8 +1,8 @@
 # SimpleWallet 协议文档 （意见征集稿）
 
-版本：beta 1.0.4
+版本：beta 1.0.5
 
-最后更新：2018.8.13 18:25
+最后更新：2018.8.13 20:30
 
 
 ## 简介
@@ -134,11 +134,10 @@ sign = ecc.sign(data, privateKey)
 	contract    string   // 转账的token所属的contract账号名，必须
 	symbol      string   // 转账的token名称，必须
 	precision   number   // 转账的token的精度，小数点后面的位数，必须
-	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去
-			     // 钱包转账时的memo信息，格式为 dappData=xxxxxxx&ref=walletname
-			     // dapp收到转账后,用dappData来关联自己的业务逻辑，用ref标示来区分来源
+	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去，如:k1=v1&k2=v2
+			     // 钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
 	expire	    number   // 二维码过期时间，unix时间戳
-	info {               // 此笔转账交易的业务附加信息，可选项，仅用于钱包展示，方便用户识别，如下为示例
+	info {               // 此笔转账交易的业务附加信息，可选项，字段可自己定义，如下为示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
 		limitType number    // 0 限价 1 市价
@@ -171,13 +170,12 @@ sign = ecc.sign(data, privateKey)
 	contract    string   // 转账的token所属的contract账号名	
 	symbol      string   // 转账的token名称，必须
 	precision   number   // 转账的token的精度，小数点后面的位数，必须	
-	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去
-			     // 钱包转账时的memo信息，格式为 dappData=xxxxxxx&ref=walletname
-			     // dapp收到转账后,用dappData来关联自己的业务逻辑，用ref标示来区分来源
+	dappData    string   // 由Dapp生成的业务信息，此业务信息需要钱包在转账时附加在memo中发出去，如:k1=v1&k2=v2
+			     // 钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
     	callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com，可选
     		             // 钱包回调时在此URL后加上操作结果，建议格式：appABC://abc.com?action=login&result=1, 
 			     // action的值为login/transfer，result的值为：0为用户取消，1为成功,  2为失败
-	info {               // 此笔转账交易的业务附加信息，可选项，仅用于钱包展示，方便用户识别，如下为示例
+	info {               // 此笔转账交易的业务附加信息，可选项，字段可自己定义，如下为示例
 		orderID number      // 订单
 		side number         // 0 卖单 1 买单
 		limitType number    // 0 限价 1 市价
