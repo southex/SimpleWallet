@@ -44,7 +44,7 @@ simplewallet://eos.io?param={json数据}
 > 
 > 业务流程图如下：
 
-![image](http://on-img.com/chart_image/5b658d5de4b0be50eacf8f0c.png)
+![image](http://on-img.com/chart_image/5b658d5de4b0be50eacf8f0c.png?t=1)
 
 - 钱包扫描dapp web提供的登录二维码，此二维码的数据格式为json，包含以下数据：
 ```
@@ -92,7 +92,7 @@ sign = ecc.sign(data, privateKey)
 #### 场景2：Dapp的移动端应用拉起钱包App，请求登录授权
 > 	适合Dapp的移动端(iOS或安卓端）接入。业务流程图如下：
 
-![image](http://on-img.com/chart_image/5b6591fbe4b0edb750f9a364.png)
+![image](http://on-img.com/chart_image/5b6591fbe4b0edb750f9a364.png?t=1)
 - Dapp的移动端拉起钱包APP要求登录授权，提供给钱包App的数据格式为json,包含以下信息：
 ```
 // 传递给钱包APP的数据包结构
@@ -118,7 +118,7 @@ sign = ecc.sign(data, privateKey)
 #### 场景1：钱包扫描二维码进行支付
 > 业务流程图如下:
 
-![image](http://on-img.com/chart_image/5b6594bae4b053a09c24fa9a.png)
+![image](http://on-img.com/chart_image/5b6594bae4b053a09c24fa9a.png?t=1)
 
 ```
 // 扫描的支付二维码数据格式
@@ -153,7 +153,7 @@ sign = ecc.sign(data, privateKey)
 #### 场景2：Dapp的移动端拉起钱包App，请求支付授权
 > 业务流程图如下：
 
-![image](http://on-img.com/chart_image/5b659391e4b0f8477da3138b.png)
+![image](http://on-img.com/chart_image/5b659391e4b0f8477da3138b.png?t=1)
 ```
 // 传递给钱包APP的数据包结构
 {
