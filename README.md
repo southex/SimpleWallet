@@ -135,7 +135,7 @@ sign = ecc.sign(data, privateKey)
 
 ![image](http://on-img.com/chart_image/5b659391e4b0f8477da3138b.png)
 ```
-// 支付通用的数据格式
+// 传递给钱包APP的数据包结构
 {
 	protocol    string   // 协议名，钱包用来区分不同协议，本协议为 SimpleWallet
 	version     string   // 协议版本信息，如1.0
