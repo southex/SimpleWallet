@@ -1,4 +1,4 @@
-# Simple 协议文档
+# SimpleWallet 协议文档
 
 # 版本和更新信息
 
