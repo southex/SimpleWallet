@@ -190,7 +190,7 @@ sign = ecc.sign(data, privateKey)
 // 错误返回 
 {
     code number     //错误符，等于0是成功，大于0说明请求失败，dapp返回具体的错误码
-    message string  //返回的提示信息
+    error string  //返回的提示信息
 }
 ```
 
