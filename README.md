@@ -12,6 +12,13 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 
 遵照此协议，可以减少各方开发适配工作，低耦合的实现钱包对Dapp进行登录授权和支付。
 
+本协议由SouthEX发起，和国内多家钱包讨论共同参与制定，截至目前，参与方包括：
+
+- HaloWallet
+- KKWallet
+- MeetOne
+- More
+- TokenPocket
 
 ## 功能列表
 - 登录
