@@ -1,4 +1,4 @@
-# SimpleWallet 协议文档 （意见征集稿）
+# SimpleWallet 协议文档 
 
 版本：beta 1.0.5
 
