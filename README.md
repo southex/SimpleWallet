@@ -202,4 +202,3 @@ sign = ecc.sign(data, privateKey)
     error string  //返回的提示信息
 }
 ```
-
