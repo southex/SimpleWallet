@@ -138,7 +138,7 @@ sign = ecc.sign(data, privateKey)
 			     // 钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
 	expire	    number   // 二维码过期时间，unix时间戳
 	desc	    string   // 交易备注信息，最长不要超过128个字节，可选
-	info {               // 此笔转账交易的业务附加信息，可选项，字段可自己定义，如下为示例
+	info {               // 结构化信息字段，可选项，其中字段可自己定义，如下为示例
 		orderID number     
 		price string	   
 		stockAmount string
@@ -175,7 +175,7 @@ sign = ecc.sign(data, privateKey)
     	callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com，可选
     		             // 钱包回调时在此URL后加上操作结果，建议格式：appABC://abc.com?action=login&result=1, 
 			     // action的值为login/transfer，result的值为：0为用户取消，1为成功,  2为失败
-	info {               // 此笔转账交易的业务附加信息，可选项，字段可自己定义，如下为示例
+	info {               // 结构化信息字段，可选项，其中字段可自己定义，如下为示例
 		orderID number     
 		price string	   
 		stockAmount string
