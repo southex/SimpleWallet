@@ -197,7 +197,7 @@ sign = ecc.sign(data, privateKey)
 }
 ```
 
-## 协议参与方
+## 协议参与制定方
 
 钱包：
 - HaloWallet
