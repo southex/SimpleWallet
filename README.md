@@ -2,7 +2,9 @@
 
 版本：1.0
 
-最后更新：2018.8.15 
+最后更新：2018.8.16
+
+更新日志见最后。
 
 
 ## 简介
@@ -106,9 +108,9 @@ sign = ecc.sign(data, privateKey)
     uuID        string   // 用于Dapp登录验证唯一标识   
     loginUrl    string   // Dapp server生成的，用于此次登录验证的URL 
     loginMemo	string   // 登录备注信息，钱包用来展示，可选
-    callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com，可选
-    		         // 钱包回调时在此URL后加上操作结果，建议格式：appABC://abc.com?action=login&result=1, 
-			 // action的值为login/transfer，result的值为：0为用户取消，1为成功,  2为失败
+    callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com?action=login，可选
+    		         // 钱包回调时在此URL后加上操作结果(&result)，如：appABC://abc.com?action=login&result=1, 
+			 // result的值为：0为用户取消，1为成功,  2为失败
 }
 ```
 - 之后的流程和上面的扫码登录过程相同
@@ -167,9 +169,9 @@ sign = ecc.sign(data, privateKey)
 	dappData    string   // 由Dapp生成的业务参数信息，需要钱包在转账时附加在memo中发出去，格式为:k1=v1&k2=v2
 			     // 钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
 	desc	    string   // 交易的说明信息，钱包在付款UI展示给用户，最长不要超过128个字节，可选			     
-    	callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com，可选
-    		             // 钱包回调时在此URL后加上操作结果，建议格式：appABC://abc.com?action=login&result=1, 
-			     // action的值为login/transfer，result的值为：0为用户取消，1为成功,  2为失败	     
+        callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com?action=login，可选
+    		             // 钱包回调时在此URL后加上操作结果(&result)，如：appABC://abc.com?action=login&result=1, 
+			     // result的值为：0为用户取消，1为成功,  2为失败     
 }
 ```
 - 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callbackUrl，则回调拉起dapp的应用
