@@ -202,3 +202,8 @@ Dapp:
 
 欢迎更多的钱包和Dapp接入此协议。
 
+## 更新说明
+
+8.16 修改Dpp的应用调用钱包APP时的callbackUrl，钱包只需要附加result结果即可，无需拼装action参数
+8.15 简化协议，取消info字段；增加desc字段，此字段是string类型，用来描述一个交易
+
