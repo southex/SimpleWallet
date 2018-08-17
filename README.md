@@ -208,6 +208,11 @@ dapp:
 欢迎更多的钱包和dapp接入此协议。
 
 ## 更新说明
-- 8.17 增加测试链接；修改两个字段的命名，expire->expired,callbackUrl->callback
-- 8.16 修改dapp的应用调用钱包APP时的callback，钱包只需要附加result结果即可，无需拼装action参数
-- 8.15 简化协议，取消info字段；增加desc字段，此字段是string类型，用来描述一个交易
+- 8.17 
+  增加测试链接；
+  支付操作中增加了callback参数；
+  修改两个字段的命名，expire->expired,callbackUrl->callback
+- 8.16 
+  修改dapp的应用调用钱包APP时的callback，钱包只需要附加result结果即可，无需拼装action参数
+- 8.15 
+  简化协议，取消info字段；增加desc字段，此字段是string类型，用来描述一个交易
