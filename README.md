@@ -84,7 +84,7 @@ sign = ecc.sign(data, privateKey)
     ref        string     // 来源,如钱包名
 }
 ```
-- dapp server收到数据，验证sign签名数据，返回success == true或false；若验证成功，则在dapp的业务逻辑中，将该用户设为登录状态
+- dapp server收到数据，验证sign签名数据，返回success == true或false；若验证成功，则在dapp的业务逻辑中，将该用户设为已登录状态
   
 ```
 // 请求登录返回数据格式
@@ -114,7 +114,7 @@ sign = ecc.sign(data, privateKey)
 			 // result的值为：0为用户取消，1为成功,  2为失败
 }
 ```
-- dapp server收到数据，验证sign签名数据，返回success == true或false；若验证成功，则在dapp的业务逻辑中，将该用户设为登录状态
+- dapp server收到数据，验证sign签名数据，返回success == true或false；若验证成功，则在dapp的业务逻辑中，将该用户设为已登录状态
 
 ### 3. 支付
 #### 场景1：钱包扫描二维码进行支付
@@ -145,7 +145,7 @@ sign = ecc.sign(data, privateKey)
 			     // result的值为：0为用户取消，1为成功,  2为失败；txID为EOS主网上该笔交易的id（若有）
 }
 ```
-- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；若有callback参数，则进行一次回调访问（注意：dapp方不能根据钱包的callback认为转账已完成，需要去EOS主网做检查）
+- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；若有callback参数，则进行回调访问（注意：dapp方不能根据钱包的callback认为转账已完成，需要去EOS主网做检查）
 - dapp server可根据callback中的txID查询此笔交易的到账情况；或dapp自行搭建节点监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
 
