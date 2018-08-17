@@ -173,7 +173,7 @@ sign = ecc.sign(data, privateKey)
 			     // result的值为：0为用户取消，1为成功,  2为失败     
 }
 ```
-- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callbackUrl，则回调拉起dapp的应用
+- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callback，则回调拉起dapp的应用
 - dapp需自行监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
 
@@ -205,6 +205,6 @@ dapp:
 欢迎更多的钱包和dapp接入此协议。
 
 ## 更新说明
-- 8.17 更正两个字段的命名，expire->expired,callbackUrl->callback；增加测试链接
+- 8.17 增加测试链接；修改两个字段的命名，expire->expired,callbackUrl->callback
 - 8.16 修改dapp的应用调用钱包APP时的callback，钱包只需要附加result结果即可，无需拼装action参数
 - 8.15 简化协议，取消info字段；增加desc字段，此字段是string类型，用来描述一个交易
