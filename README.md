@@ -2,7 +2,7 @@
 
 版本：1.0
 
-最后更新：2018.8.16
+最后更新：2018.8.17
 
 更新日志见最后。
 
@@ -15,6 +15,8 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 遵照此协议，可以减少各方开发适配工作，低耦合的实现钱包对Dapp进行登录授权和支付。
 
 本协议已有多家钱包准备兼容，正在开发测试中。
+
+测试页面链接：http://swdemo.eossw.io
 
 ## 功能列表
 - 登录
@@ -60,7 +62,7 @@ simplewallet://eos.io?param={json数据}
     action      string   // 赋值为login
     uuID        string   // Dapp server生成的，用于此次登录验证的唯一标识   
     loginUrl    string   // Dapp server上用于登录验证信息的url
-    expire	number   // 二维码过期时间，unix时间戳
+    expired	number   // 二维码过期时间，unix时间戳
     loginMemo	string   // 登录备注信息，钱包用来展示，可选
 }
 ```
@@ -108,7 +110,7 @@ sign = ecc.sign(data, privateKey)
     uuID        string   // 用于Dapp登录验证唯一标识   
     loginUrl    string   // Dapp server生成的，用于此次登录验证的URL 
     loginMemo	string   // 登录备注信息，钱包用来展示，可选
-    callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com?action=login，可选
+    callback    string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com?action=login，可选
     		         // 钱包回调时在此URL后加上操作结果(&result)，如：appABC://abc.com?action=login&result=1, 
 			 // result的值为：0为用户取消，1为成功,  2为失败
 }
@@ -140,7 +142,7 @@ sign = ecc.sign(data, privateKey)
 	dappData    string   // 由Dapp生成的业务参数信息，需要钱包在转账时附加在memo中发出去，格式为:k1=v1&k2=v2
 			     // 钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
 	desc	    string   // 交易的说明信息，钱包在付款UI展示给用户，最长不要超过128个字节，可选			     
-	expire	    number   // 二维码过期时间，unix时间戳
+	expired	    number   // 二维码过期时间，unix时间戳
 }
 ```
 - 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网
@@ -169,7 +171,7 @@ sign = ecc.sign(data, privateKey)
 	dappData    string   // 由Dapp生成的业务参数信息，需要钱包在转账时附加在memo中发出去，格式为:k1=v1&k2=v2
 			     // 钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
 	desc	    string   // 交易的说明信息，钱包在付款UI展示给用户，最长不要超过128个字节，可选			     
-        callbackUrl string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com?action=login，可选
+        callback    string   // 用户完成操作后，钱包回调拉起Dapp移动端APP的回调URL,如appABC://abc.com?action=login，可选
     		             // 钱包回调时在此URL后加上操作结果(&result)，如：appABC://abc.com?action=login&result=1, 
 			     // result的值为：0为用户取消，1为成功,  2为失败     
 }
@@ -200,10 +202,13 @@ sign = ecc.sign(data, privateKey)
 Dapp:
 - SouthEX
 
+英语版本翻译：
+- EOSShenzhen
+
 欢迎更多的钱包和Dapp接入此协议。
 
 ## 更新说明
-
+- 8.17 更正两个字段的命名，expire->expired,callbackUrl->callback；增加测试链接
 - 8.16 修改Dpp的应用调用钱包APP时的callbackUrl，钱包只需要附加result结果即可，无需拼装action参数
 - 8.15 简化协议，取消info字段；增加desc字段，此字段是string类型，用来描述一个交易
 
