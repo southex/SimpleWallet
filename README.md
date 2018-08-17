@@ -16,7 +16,7 @@ SimpleWallet是一个EOS钱包和Dapp的通用对接协议。
 
 本协议已有多家钱包准备兼容，正在开发测试中。
 
-测试页面链接：http://swdemo.eossw.io
+测试页面链接：http://demo.eossw.io
 
 ## 功能列表
 - 登录
