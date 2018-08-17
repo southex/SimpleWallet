@@ -140,10 +140,13 @@ sign = ecc.sign(data, privateKey)
 			     // 钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
 	desc	    string   // 交易的说明信息，钱包在付款UI展示给用户，最长不要超过128个字节，可选			     
 	expired	    number   // 二维码过期时间，unix时间戳
+        callback    string   // 用户完成操作后，钱包回调拉起dapp移动端的回调URL,如https://abc.com?action=login，可选
+    		             // 钱包回调时在此URL后加上操作结果(result、txID)，如：https://abc.com?action=login&result=1&txID=xxx, 
+			     // result的值为：0为用户取消，1为成功,  2为失败；txID为EOS主网上该笔交易的id（若有）
 }
 ```
 - 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网
-- dapp server需自行监控EOS主网，检查代币是否到账
+- dapp server可根据callback中的txID查询此笔交易的到账情况；或dapp自行搭建节点监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
 
 
@@ -169,12 +172,12 @@ sign = ecc.sign(data, privateKey)
 			     // 钱包转账时还可附加ref参数标明来源，如：k1=v1&k2=v2&ref=walletname
 	desc	    string   // 交易的说明信息，钱包在付款UI展示给用户，最长不要超过128个字节，可选			     
         callback    string   // 用户完成操作后，钱包回调拉起dapp移动端的回调URL,如appABC://abc.com?action=login，可选
-    		             // 钱包回调时在此URL后加上操作结果(&result)，如：appABC://abc.com?action=login&result=1, 
-			     // result的值为：0为用户取消，1为成功,  2为失败     
+    		             // 钱包回调时在此URL后加上操作结果(result、txID)，如：appABC://abc.com?action=login&result=1&txID=xxx, 
+			     // result的值为：0为用户取消，1为成功,  2为失败；txID为EOS主网上该笔交易的id（若有）
 }
 ```
 - 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callback，则回调拉起dapp的应用
-- dapp需自行监控EOS主网，检查代币是否到账
+- dapp server可根据callbacka是的txID查询此笔交易的到账情况；或自行搭建节点监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
 
 ### 错误处理
