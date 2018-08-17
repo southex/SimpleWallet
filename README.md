@@ -145,8 +145,8 @@ sign = ecc.sign(data, privateKey)
 			     // result的值为：0为用户取消，1为成功,  2为失败；txID为EOS主网上该笔交易的id（若有）
 }
 ```
-- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；若有callback参数，则进行回调访问（注意：dapp方不能根据钱包的callback认为转账已完成，需要去EOS主网做检查）
-- dapp server可根据callback中的txID查询此笔交易的到账情况；或dapp自行搭建节点监控EOS主网，检查代币是否到账
+- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；若有callback参数，则进行回调访问
+- dapp可根据callback中的txID去主网查询此笔交易（不能完全依赖此方式来确认用户的付款）；或dapp自行搭建节点监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
 
 
@@ -176,8 +176,8 @@ sign = ecc.sign(data, privateKey)
 			     // result的值为：0为用户取消，1为成功,  2为失败；txID为EOS主网上该笔交易的id（若有）
 }
 ```
-- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callback，则回调拉起dapp的应用（注意：dapp方不能根据钱包的callback认为转账已完成，需要去EOS主网做检查）
-- dapp server可根据callbacka是的txID查询此笔交易的到账情况；或自行搭建节点监控EOS主网，检查代币是否到账
+- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callback，则回调拉起dapp的应用
+- dapp可根据callback里的txID去主网查询此笔交易（不能完全依赖此方式来确认用户的付款）；或自行搭建节点监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
 
 ### 错误处理
