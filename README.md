@@ -173,7 +173,7 @@ sign = ecc.sign(data, privateKey)
 }
 ```
 - 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callbackUrl，则回调拉起dapp的应用
-- dapp server需自行监控EOS主网，检查代币是否到账
+- dapp需自行监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
 
 ### 错误处理
@@ -188,7 +188,7 @@ sign = ecc.sign(data, privateKey)
 
 ## 协议参与制定方
 
-钱包：
+钱包（按首字母排序）：
 - HaloWallet
 - KKWallet
 - MeetOne
