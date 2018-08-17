@@ -145,7 +145,7 @@ sign = ecc.sign(data, privateKey)
 			     // result的值为：0为用户取消，1为成功,  2为失败；txID为EOS主网上该笔交易的id（若有）
 }
 ```
-- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网
+- 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；若有callback参数，则进行一次回调访问
 - dapp server可根据callback中的txID查询此笔交易的到账情况；或dapp自行搭建节点监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
 
