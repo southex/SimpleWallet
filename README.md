@@ -84,12 +84,13 @@ sign = ecc.sign(data, privateKey)
     ref        string     // 来源,如钱包名
 }
 ```
-- dapp server收到数据，验证sign签名数据，返回success == true或false；若验证成功，则在dapp的业务逻辑中，将该用户设为已登录状态
+- dapp server收到数据，验证sign签名数据，并返回；若验证成功，则在dapp的业务逻辑中，将该用户设为已登录状态
   
 ```
-// 请求登录返回数据格式
+// 错误返回 
 {
-    success    bool
+    code number     //错误符，等于0是成功，大于0说明请求失败，dapp返回具体的错误码
+    error string    //返回的提示信息
 }
 
 ```
@@ -186,7 +187,7 @@ sign = ecc.sign(data, privateKey)
 // 错误返回 
 {
     code number     //错误符，等于0是成功，大于0说明请求失败，dapp返回具体的错误码
-    error string  //返回的提示信息
+    error string    //返回的提示信息
 }
 ```
 
