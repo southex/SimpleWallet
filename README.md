@@ -84,7 +84,7 @@ sign = ecc.sign(data, privateKey)
     ref        string     // 来源,如钱包名
 }
 ```
-- dapp server收到数据，验证sign签名数据，并返回；若验证成功，则在dapp的业务逻辑中，将该用户设为已登录状态
+- dapp server收到数据，验证sign签名数据，并返回结果code；若验证成功，则在dapp的业务逻辑中，将该用户设为已登录状态
   
 ```
 // 错误返回 
