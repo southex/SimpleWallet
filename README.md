@@ -6,6 +6,7 @@
 
 更新日志见最后。
 
+English Version: https://github.com/southex/SimpleWallet/edit/master/README_en.md
 
 ## 简介
 SimpleWallet是一个EOS钱包和dapp的通用对接协议。
