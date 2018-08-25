@@ -1,4 +1,4 @@
-# SimpleWallet protocol document (Closed Beta)
+# SimpleWallet protocol document
 
 Version: 1.0
 
@@ -6,7 +6,7 @@ Last updated: 2018.8.17
 
 Scroll to the end for version updates
 
-<https://github.com/southex/SimpleWallet/blob/master/README_en.md>
+中文版：https://github.com/southex/SimpleWallet/blob/master/README.md
 
 ## Introduction
 
@@ -93,10 +93,12 @@ Ref string // source, such as the wallet name
 }
 ```
 - dapp server receives the data, verifies the sign data, and returns success == true or false; If the validation is successful, the user is set to logged-in the business logic of the dapp
+
 ```
-// request login to return data format
+// error return 
 {
-  success   bool
+  code number // error, equal to 0 is successful, greater than 0 means the request failed, dapp returns the specific error code
+  error string //prompt message returned
 }
 ```
 
@@ -212,7 +214,7 @@ The code does not equal 0, and the request fails
 ```
 // error return
 {
-code number // error, equal to 0 is successful, greater than 0 means the request failed, dapp returns the specific error code
+  code number // error, equal to 0 is successful, greater than 0 means the request failed, dapp returns the specific error code
   error string //prompt message returned
 }
 ```
