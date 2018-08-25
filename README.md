@@ -1,4 +1,4 @@
-# SimpleWallet 协议文档 （内测）
+# SimpleWallet 协议文档 
 
 版本：1.0
 
