@@ -2,9 +2,7 @@
 
 版本：1.0
 
-最后更新：2018.8.17
-
-更新日志见最后。
+协议最后更新：2018.8.31
 
 English Version: https://github.com/southex/SimpleWallet/blob/master/README_en.md （ EOSShenzhen 翻译）
 
@@ -149,6 +147,7 @@ sign = ecc.sign(data, privateKey)
 - 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；若有callback参数，则进行回调访问
 - dapp可根据callback中的txID去主网查询此笔交易（不能完全依赖此方式来确认用户的付款）；或dapp自行搭建节点监控EOS主网，检查代币是否到账
 - 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
+- 钱包应该提醒用户注意辨别二维码的来源，避免被钓鱼攻击
 
 
 #### 场景2：dapp的移动端拉起钱包App，请求支付授权
@@ -179,7 +178,7 @@ sign = ecc.sign(data, privateKey)
 ```
 - 钱包组装上述数据，生成一笔EOS的transaction，用户授权此笔转账后，提交转账数据到EOS主网；如果有callback，则回调拉起dapp的应用
 - dapp可根据callback里的txID去主网查询此笔交易（不能完全依赖此方式来确认用户的付款）；或自行搭建节点监控EOS主网，检查代币是否到账
-- 对于流行币种如IQ，如果二维码中给出的contract名和官方的合约名不一致，钱包方要提醒用户，做二次确认
+
 
 ### 错误处理
 - code不等于0则请求失败
