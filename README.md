@@ -14,6 +14,14 @@ SimpleWallet是一个EOS钱包和dapp的通用对接协议。
 
 测试页面链接：http://demo.eossw.io
 
+## 协议发起方
+本协议由SouthEX起草，MeetOne、More、TokenPocket、KKWallet、HaloWallet 共同参与讨论和修改。
+
+除以上五家钱包之外，目前正在接入的钱包商还包括：EOS LIVE钱包、番茄钱包。
+
+目前接入此协议的名单：https://github.com/southex/SimpleWallet/blob/master/supporter_list.md
+
+欢迎更多的钱包和dapp接入此协议，并向我们提交你们的产品信息。
 
 ## 功能列表
 - 登录
@@ -189,16 +197,6 @@ sign = ecc.sign(data, privateKey)
     error string    //返回的提示信息
 }
 ```
-
-## 协议发起方
-
-本协议由SouthEX起草，MeetOne、More、TokenPocket、KKWallet、HaloWallet 共同参与讨论和修改。
-
-除以上五家钱包之外，目前正在接入的钱包商还包括：EOS LIVE钱包、番茄钱包。
-
-目前接入此协议的名单：https://github.com/southex/SimpleWallet/blob/master/supporter_list.md
-
-欢迎更多的钱包和dapp接入此协议，并向我们提交你们的产品信息。
 
 ## 更新说明
 - 8.17 
