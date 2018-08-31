@@ -207,6 +207,7 @@ The following steps are similar to Scenario 1
 
 - The Dapp will either check this transaction from the mainnet according to the txID in callback (it cannot completely rely on this method to confirm the user's payment); or the dapp will set up the node to monitor the EOS mainnet by itself, and check whether the tokens are received
 - For popular currencies such as IQ, if the contract name given in the QR code is inconsistent with the name given by the official contract, the wallet party should remind the user and make a second confirmation
+- There should be reminder for user to identify the source of the QR code in wallet, to avoid the phishing attack.
 
 ## Error Handling
 
@@ -220,23 +221,10 @@ The code does not equal 0, and the request fails
 ```
 ## Protocol Participants
 
-Wallet (in alphabetical order) :
-- EOS LIVE
-- HaloWallet
-- KKWallet
-- MeetOne
-- More
-- TokenPocket
-
-dapp:
-
-- SouthEX
-
-The English version translator：
-
-- EOShenzhen
-
-Hopefully, more wallets and dapps will utilize this protocol.
+This protocol is drafted by SouthEX, and jointly discussed and amended by MeetOne, More, TokenPocket, KKWallet and HaloWallet.
+Updated Protocol Supporters list:
+https://github.com/southex/SimpleWallet/blob/master/supporter_list.md
+Welcome more wallets and apps to support this protocol and submit your production info to us.
 
 ## Updated instructions
 
