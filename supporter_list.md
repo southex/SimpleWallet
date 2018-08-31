@@ -15,10 +15,14 @@ https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVt
 - More
 - KKWallet
 - Tokenpocket
+- HaloWallet
+- Hoo
+- EOSLive
+- 番茄钱包
 
 ## exchange
 
 - SouthEX
-
+- newdex
 
 ## dapp
