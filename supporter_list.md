@@ -10,7 +10,7 @@ Please submit your product info if your product have supproted the SimpleWallet 
 https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVtDvA6SA8XfA/viewform?usp=sf_link
 
 
-## Wallet
+## wallet
 - Meetone 
 - More
 - KKWallet
