@@ -16,7 +16,7 @@ https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVt
 - KKWallet
 - Tokenpocket
 - HaloWallet
-- EOSLive
+- EOS LIVE
 - 番茄钱包
 
 ## exchange
