@@ -221,7 +221,7 @@ The code does not equal 0, and the request fails
 ## Protocol Participants
 
 Wallet (in alphabetical order) :
-
+- EOS LIVE
 - HaloWallet
 - KKWallet
 - MeetOne
