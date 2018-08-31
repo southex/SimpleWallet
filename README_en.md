@@ -222,9 +222,11 @@ The code does not equal 0, and the request fails
 ## Protocol Participants
 
 This protocol is drafted by SouthEX, and jointly discussed and amended by MeetOne, More, TokenPocket, KKWallet and HaloWallet.
+
 Updated Protocol Supporters list:
 https://github.com/southex/SimpleWallet/blob/master/supporter_list.md
-Welcome more wallets and apps to support this protocol and submit your production info to us.
+
+Welcome more wallets and apps to support this protocol and submit your product info to us.
 
 ## Updated instructions
 
