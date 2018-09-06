@@ -250,3 +250,25 @@ Updated callback when the application of dapp calls the wallet App. The wallet o
 Simplify the protocol and cancel the info field
 
 Added string type: desc to describe a typical transaction
+
+
+## FAQ
+- How can I prevent users from scanning fake QR codes?
+
+  > Although it is possible to avoid phishing by creating a unified DAPP and wallet registrar, it will make the protocol more complex, more centralized, and thus more vulnerable. We recommend that the wallet merchants remind the user to identify the source of the QR code on the interface, improve the user's security awareness, and display the original information of the signature to the user.
+
+- There is too much information in the QR code. Can you increase the compression algorithm?
+
+  > We have tested that we can compress about 20%-30% information about the QR code, the effect is not particularly ideal, so the compression algorithm is not officially included in the protocol. Although the QR code looks too dense, the wallet can be basically recognized. We suggest that if there is too much information in the QR code, DAPP will increase the size when displaying the QR code, so that the user does not have to put the phone close to the screen to improve the recognition speed of the wallet.
+
+- When verifying the login information, should DAPP verify the activity or the signature of the owner?
+
+  > We recommend that DAPP first verify the signature of the activity and, if not, verify the owner. For wallet vendors, it is recommended to sign with active permissions.
+
+- Why doesn't the SimpleWallet protocol set the relevant login and payment standards for the scene in which DAPP is embedded in the wallet?
+
+  > At present, most wallets are developing or have developed their own set of related standards, and the standard is very costly. We recommend that each wallet also refer to the Scatter scheme, which will greatly reduce the adaptation cost of the distributed DAPPs that have been connected to the network.
+
+- Why doesn't the SimpleWallet protocol set the standard for smart contract calls between wallet and DAPP?
+
+  > Ibid.
