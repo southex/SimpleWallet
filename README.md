@@ -209,7 +209,7 @@ sign = ecc.sign(data, privateKey)
 
 * 在验证登录信息的时候，dapp应该验证active还是owner的签名？
 
-  > 我们建议dapp先验证active的签名，若不通过，再验证owner。对于钱包商来说，也建议用active权限来签名。
+  > 我们建议dapp先验证active的签名，若不通过，再验证owner。对于钱包商来说，建议用active权限来签名。
 
 * 对dapp内嵌到钱包里面的场景，SimpleWallet协议为何不制定相关登录和支付标准？
 
