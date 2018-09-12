@@ -39,11 +39,15 @@ SimpleWallet是一个EOS钱包和dapp的通用对接协议。
 
 钱包APP应在操作系统内注册拦截协议（URL Scheme、appLink），以便dapp的APP拉起钱包应用。
 
+以下为安卓端的协议接入方法：
+
 拦截协议为：simplewallet://eos.io
 
 dapp的移动端应用可以调用此协议，传递数据给钱包APP，传递数据的请求格式为：
 
 simplewallet://eos.io?param={json数据}
+
+对于iOS端，由于其app之间的调用机制和安卓差别很大，制定统一的协议非常复杂，且目前基于iOS的dapp和钱包很少，因此SimpleWallet不对iOS上进行协议统一。各方钱包和dapp可自行协商对接方法。
 
 ### 2. 登录
  
