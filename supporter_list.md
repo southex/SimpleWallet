@@ -19,6 +19,7 @@ https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVt
 - EOS LIVE
 - 番茄钱包
 - PocketEOS
+- 麦子钱包
 
 ## exchange
 
