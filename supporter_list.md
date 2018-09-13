@@ -11,22 +11,22 @@ https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVt
 
 
 ## wallet
-- Meetone 
-- More
-- KKWallet
-- Tokenpocket
-- HaloWallet
-- EOS LIVE
-- 番茄钱包
-- PocketEOS
-- 麦子钱包
+- MEET.ONE  https://meet.one/   
+- MORE WALLET  https://more.top/ 
+- KKWallet  https://kkwallet.com/
+- TokenPocket  https://www.mytokenpocket.vip/
+- HaloWallet  https://wap.halowallet.io/
+- EOS LIVE  https://eos.live/
+- 番茄钱包  https://tomatowallet.cn/
+- PocketEOS  https://pocketeos.com/#/
+- 麦子钱包  http://www.medishares.org/wallet/cn/
 
 ## exchange
 
-- SouthEX
-- newdex
+- SouthEX  https://www.southex.com
+- Newdex  https://newdex.io/
 
 ## dapp
 
-- 企鹅大陆
-- LuckChain
+- 企鹅大陆  https://www.qiedalu.com/
+- LuckChain  http://luckchain.org/
