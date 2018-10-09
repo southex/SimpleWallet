@@ -20,11 +20,13 @@ https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVt
 - 番茄钱包  https://tomatowallet.cn/
 - PocketEOS  https://pocketeos.com/#/
 - 麦子钱包  http://www.medishares.org/wallet/cn/
+- Bitpie  https://bitpie.com/#/
 
 ## exchange
 
 - SouthEX  https://www.southex.com
 - Newdex  https://newdex.io/
+- DEXEOS  https://dexeos.io
 
 ## dapp
 
