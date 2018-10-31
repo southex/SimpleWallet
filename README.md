@@ -16,7 +16,7 @@ SimpleWallet是一个EOS钱包和dapp的通用对接协议。
 ## 协议发起方
 本协议由SouthEX起草，MeetOne、More、TokenPocket、KKWallet、HaloWallet 共同参与讨论和修改。
 
-除以上五家钱包之外，目前正在接入的钱包商还包括：EOS LIVE钱包、番茄钱包、PocketEOS及韩国的coinus等。
+除以上五家钱包之外，目前正在接入的钱包商还包括韩国的coinus等。
 
 目前接入此协议的名单：https://github.com/southex/SimpleWallet/blob/master/supporter_list.md
 
