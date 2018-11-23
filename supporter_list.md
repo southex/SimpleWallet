@@ -21,6 +21,7 @@ https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVt
 - PocketEOS  https://pocketeos.com/#/
 - 麦子钱包  http://www.medishares.org/wallet/cn/
 - Bitpie  https://bitpie.com/#/
+- NOVA Wallet http://eosnova.io/
 
 ## exchange
 
