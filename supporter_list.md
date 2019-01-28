@@ -21,6 +21,11 @@ https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVt
 - PocketEOS  https://pocketeos.com/#/
 - 麦子钱包  http://www.medishares.org/wallet/cn/
 - Bitpie  https://bitpie.com/#/
+- BitPortal  https://www.bitportal.io/
+- ZebraWallet  https://www.zebrawallet.io/
+- VipWallet  http://www.vipwallet.tech/
+- Paytomat Wallet  http://paytomat.com
+
 
 ## exchange
 
@@ -32,3 +37,4 @@ https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVt
 
 - 企鹅大陆  https://www.qiedalu.com/
 - LuckChain  http://luckchain.org/
+- Simplebet  http://simple.ibetech.io/eos
