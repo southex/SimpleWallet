@@ -25,7 +25,7 @@ https://docs.google.com/forms/d/e/1FAIpQLSciEsvqsbale3-zcmktBB62_RzaNlKRtBHY1pVt
 - ZebraWallet  https://www.zebrawallet.io/
 - VipWallet  http://www.vipwallet.tech/
 - Paytomat Wallet  http://paytomat.com
-
+- imToken http://token.im/
 
 ## exchange
 
